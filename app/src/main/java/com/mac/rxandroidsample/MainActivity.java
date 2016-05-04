@@ -68,8 +68,8 @@ public class MainActivity extends AppCompatActivity {
         observable.subscribeOn(Schedulers.newThread());
         observable.observeOn(AndroidSchedulers.mainThread());
 
-        observable.subscribe(textBroadCastReceiver);
-        observable.subscribe(colorBroadCastReceiver);
+        observable.subscribe(textBroadCastReceiver); // this will run the code written inside call()
+        observable.subscribe(colorBroadCastReceiver); // this will run the code written inside call() again x2
 
         return observable;
     }
